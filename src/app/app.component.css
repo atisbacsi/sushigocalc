@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Life+Savers:700');
+
+.calculator {
+    display: block;
+    margin: 0 auto;
+    font-size: calc(0.5em + 2vw);
+    font-family: 'Life Savers', cursive;
+}
+
+@media (min-aspect-ratio: 6/9) {
+    .calculator {
+        display: block;
+        width: 50vh;
+        margin: 0 auto;
+        font-size: calc(0.5em + 1vh);
+    }
+    
+}
+

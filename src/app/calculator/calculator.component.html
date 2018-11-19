@@ -1,0 +1,5 @@
+<gamerselector></gamerselector>
+<display *ngIf="!resultPageOpened"></display>
+<keyboard *ngIf="!resultPageOpened"></keyboard>
+<result *ngIf="resultPageOpened"></result>
+<turnselector (onTurnSelected)="onTurnSelected()"></turnselector><resultsopener (onResultOpen)="onResultOpen()"></resultsopener>

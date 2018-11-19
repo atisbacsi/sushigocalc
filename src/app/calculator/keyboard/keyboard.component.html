@@ -1,0 +1,12 @@
+<div class="keyboard" [class.wasabiShift]="wasabiShifted">
+  <key [honour]="maki" (keyPressed)="onMakiPopupOpen()"></key>
+  <key [honour]="tempura" (keyPressed)="onKeypressed($event)"></key>
+  <key [honour]="sashimi" (keyPressed)="onKeypressed($event)"></key>
+  <key [honour]="gozgomboc" (keyPressed)="onKeypressed($event)"></key>
+  <key [honour]="wasabi" (keyPressed)="onWasabiShift()"></key>
+  <key [honour]="puding" (keyPressed)="onKeypressed($event)"></key>
+  <key [honour]="tojasNigiri" (keyPressed)="onKeypressed($event)"></key>
+  <key [honour]="lazacNigiri" (keyPressed)="onKeypressed($event)"></key>
+  <key [honour]="polipNigiri" (keyPressed)="onKeypressed($event)"></key>
+</div>
+<makipopup *ngIf="makiPopupOpen" (onClose)="onMakiCountEvent($event)"></makipopup>

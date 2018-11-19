@@ -1,0 +1,10 @@
+<div class="display">
+  <div class="display__honourlist">
+    <div class="display__honour" *ngFor="let honour of honourList.honours">
+      <img src="assets/{{honour.icon}}" />
+      <div *ngIf="honour.param > 0">x{{honour.param}} </div>
+    </div>
+    <div class="display__sum">{{sum}}</div>
+  </div>
+  <button class="display__delete" (click)="onDelete()">Delete</button>
+</div>

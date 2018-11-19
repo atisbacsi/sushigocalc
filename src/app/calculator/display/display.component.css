@@ -1,0 +1,58 @@
+.display {
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+    margin: 0.5em 0 0.5em 0;
+}
+.display__honourlist {
+    flex: 1;
+    height: 2.3em;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    background-color: silver;
+    box-shadow: 0 2px 3px 2px hsl(0,0%,27%) inset, 0 0px 2px 1px rgb(143, 143, 143);
+    border-radius: 0.2em;
+    padding-left: 0.3em;
+}
+.display__honour img {
+    width: 2em;
+    padding: 0 0.1em 0 0.1em;
+}
+.display__honour div {
+    padding-right: 0.1em;
+}
+
+.display__honour {
+    display: flex;
+    align-items: center;
+}
+
+.display__sum {
+    padding: 0 0.3em 0 0.2em;
+    flex: 1;
+    text-align: right;
+}
+.display__sum::before {
+    content: "=";
+}
+
+.display__delete {
+    display: block;
+    position: relative;
+    color: transparent;
+    width: 2em;
+    height: 2em;
+    margin: 0.5em;
+    background-color: hsl(220, 50%, 50%);
+    border: 0;
+
+}
+.display__delete::after {
+    display: block;
+    content: "<<";
+    color: white;
+    position: absolute;
+    bottom: 0.3em;
+    right: 0.3em;
+}
