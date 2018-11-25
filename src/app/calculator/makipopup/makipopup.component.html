@@ -2,7 +2,7 @@
   <div class="makipopup__backdrop"></div>
   <div class="makipopup__content">
     Mennyi Makit sikerült összegyüjteni?
-    <input type="number" [(ngModel)]="countOfMaki" />
-    <button (click)="onClose()" class="makipopup__close">Close</button>
+    <input type="number" [(ngModel)]="countOfMaki" (keyup.enter)="onClose()" tabindex="1" #countInput/>
+    <button type="submit"  (click)="onClose()" class="makipopup__close" tabindex="2">Close</button>
   </div>
 </div>

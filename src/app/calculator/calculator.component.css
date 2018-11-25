@@ -1,2 +1,19 @@
 
+.calculator__lastline {
+    display: flex;
+}
 
+.calculator__lastline--turnselector {
+    flex: 3;
+}
+
+.calculator__lastline--resultopener {
+    flex: 1;
+    background-color: hsl(229, 40%, 80%);
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #c0c0c0; 
+    line-height: 2em;
+    margin-top: 1em;
+    margin-left: 1px;
+}

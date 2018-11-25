@@ -2,8 +2,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'resultsopener',
-  template: `<a (click)="onOpen()">Results</a>`,
-  styles: [``]
+  template: `<a (click)="onOpen()" class="resultopener">Results</a>`,
+  styles: [`
+
+  `]
 })
 export class ResultsOpenerComponent  {
 

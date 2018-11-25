@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'calculator',
   templateUrl: './calculator.component.html',
-  styles: ['./calculator.component.css']
+  styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent  {
   resultPageOpened: boolean = false;

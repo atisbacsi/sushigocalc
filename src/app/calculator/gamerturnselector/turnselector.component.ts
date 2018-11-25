@@ -11,19 +11,7 @@ import { Turn } from '../../domain/turn';
       <a (click)="select(turn)">{{turn.name}}</a>
     </li>
   </ul>`,
-  styles: [`
-  .selected { color: blue; }
-  .turnselector-layout {
-    display: flex;
-    list-style-type: none;
-  }
-  .turnselector-layout li {
-    flex: 1 1 0;
-    background-color: hsl(229, 80%, 80%);
-    text-align: center;
-  }
-
-  `]
+  styleUrls: ['./turnselector.component.css']
 })
 export class TurnSelectorComponent  {
 

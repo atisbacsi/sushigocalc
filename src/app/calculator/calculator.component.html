@@ -2,4 +2,7 @@
 <display *ngIf="!resultPageOpened"></display>
 <keyboard *ngIf="!resultPageOpened"></keyboard>
 <result *ngIf="resultPageOpened"></result>
-<turnselector (onTurnSelected)="onTurnSelected()"></turnselector><resultsopener (onResultOpen)="onResultOpen()"></resultsopener>
+<div class="calculator__lastline">
+    <turnselector class="calculator__lastline--turnselector" (onTurnSelected)="onTurnSelected()"></turnselector>
+    <resultsopener class="calculator__lastline--resultopener" (onResultOpen)="onResultOpen()"></resultsopener>
+</div>

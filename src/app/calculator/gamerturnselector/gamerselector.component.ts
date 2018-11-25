@@ -7,23 +7,12 @@ import { Gamer, GAMERS } from '../../domain/gamer';
   selector: 'gamerselector',
   template: `
   <ul class="gamerselector-layout">
-    <li *ngFor="let gamer of gamers" [class.selected]="gamer.selected">
-      <a (click)="select(gamer)">{{gamer.name}}</a>
+    <li *ngFor="let gamer of gamers" [class.selected]="gamer.selected"  (click)="select(gamer)">
+      <a>{{gamer.name}}</a>
     </li>
-    <li><a (click)="add()">+</a></li>    
+    <li (click)="add()"><a>+</a></li>    
   </ul>`,
-  styles: [`
-  .selected { color: blue; }
-  .gamerselector-layout {
-    display: flex;
-    list-style-type: none;
-  }
-  .gamerselector-layout li {
-    flex: auto;
-    background-color: hsl(229, 90%, 90%);
-    text-align: center;
-  }
-  `]
+  styleUrls: ['./gamerselector.component.css']
 })
 export class GamerSelectorComponent  {
   constructor(private gamersService: GamersService) {

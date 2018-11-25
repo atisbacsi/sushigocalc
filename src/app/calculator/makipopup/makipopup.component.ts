@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'makipopup',
@@ -7,12 +7,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class MakipopupComponent implements OnInit {
 
-  countOfMaki: number = 0;
+  countOfMaki: number;
+
+  @ViewChild("countInput")
+  inputField: ElementRef;
 
   @Output('onClose') onCloseEvent = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit() {
+    this.inputField.nativeElement.focus();
   }
 
   onClose():void {
