@@ -41,18 +41,22 @@
     display: block;
     position: relative;
     color: transparent;
-    width: 2em;
-    height: 2em;
-    margin: 0.5em;
-    background-color: hsl(220, 50%, 50%);
+    outline: none;
+    width: 2.2em;
+    height: 2.2em;
+    margin-left: 0.5em;
+    background-color: hsl(220, 51%, 75%);
     border: 0;
-
+    border-radius: 0.3em;
+    box-shadow: 0 2px 2px 2px hsl(0, 0%, 30%), 0 4px 4px 3px hsl(0, 0%, 75%);
+    font: inherit;
 }
 .display__delete::after {
     display: block;
     content: "<<";
     color: white;
     position: absolute;
-    bottom: 0.3em;
-    right: 0.3em;
+    bottom: 0.5em;
+    right: 0.7em;
+
 }

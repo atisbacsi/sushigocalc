@@ -6,7 +6,6 @@ import { Honour } from '../../../domain/honour';
   template: `<div class="key" (click)="clicked()"><img src="assets/{{honour.icon}}" /><div class="key__label">{{honour.name}}</div></div>`,
   styles: [`
     div.key { 
-      border: 1px solid black; 
       border-radius: 12px; 
       height: 15vh; 
       display: flex;
