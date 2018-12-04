@@ -19,11 +19,12 @@ import { ResultsOpenerComponent } from './calculator/gamerturnselector/resultsop
 import { ResultComponent } from './calculator/result.component';
 import { MakipopupComponent } from './calculator/makipopup/makipopup.component';
 import { DisplayComponent } from './calculator/display/display.component';
+import { GamereditorComponent } from './calculator/gamerturnselector/gamereditor/gamereditor.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,  CalculatorComponent, GamerSelectorComponent, TurnSelectorComponent, ResultsOpenerComponent, KeyComponent, KeyboardComponent, ResultComponent, MakipopupComponent, DisplayComponent
+    AppComponent,  CalculatorComponent, GamerSelectorComponent, TurnSelectorComponent, ResultsOpenerComponent, KeyComponent, KeyboardComponent, ResultComponent, MakipopupComponent, DisplayComponent, GamereditorComponent
   ],
   imports: [
     BrowserModule, FormsModule

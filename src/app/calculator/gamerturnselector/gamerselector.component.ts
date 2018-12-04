@@ -11,10 +11,15 @@ import { Gamer, GAMERS } from '../../domain/gamer';
       <a>{{gamer.name}}</a>
     </li>
     <li (click)="add()"><a>+</a></li>    
-  </ul>`,
+    <li (click)="changeName()"><a class="gamerselector__editbtn">$</a></li>    
+  </ul>
+  <gamereditor *ngIf="openGamerEditor" [gamer]="selectedGamer" (onClose)="closeGamerEditor()"></gamereditor>`,
   styleUrls: ['./gamerselector.component.css']
 })
 export class GamerSelectorComponent  {
+
+  openGamerEditor : boolean = false;
+
   constructor(private gamersService: GamersService) {
 
   }
@@ -25,6 +30,18 @@ export class GamerSelectorComponent  {
 
   private select(selectedGamer: Gamer): void {
     this.gamersService.setSelectedGamer(selectedGamer);
+  }
+
+  changeName() : void{
+    this.openGamerEditor = true;
+  }
+
+  get selectedGamer(): Gamer {
+    return this.gamersService.getSelectedGamer();
+  }
+  
+  private closeGamerEditor(){
+    this.openGamerEditor = false;
   }
   add(): void {
     this.gamersService.addGamer();

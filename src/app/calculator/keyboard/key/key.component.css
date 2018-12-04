@@ -1,0 +1,25 @@
+div.key { 
+    border-radius: 12px; 
+    height: 15vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2px 2px 2px hsl(0, 0%, 30%), 0 4px 4px 3px hsl(0, 0%, 75%)
+            ;
+  }
+  .key--wasabis {
+    background-image: radial-gradient(hsl(0, 0%, 30%), #9198e5);
+  } 
+  div.key__label {
+    flex: 0;
+    text-align: center;
+  }
+  div.key img {
+    width: 4em;
+    height: 4em;
+    align-self: center;
+  }
+  div.key:active {
+    box-shadow: 0 0px 2px 2px hsl(0, 0%, 65%);
+    transform: translateY(4px);
+  }

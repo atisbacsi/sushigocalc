@@ -9,6 +9,7 @@ export class HonourService {
       points: 5,
       param: 0,
       icon: 'tempura.svg',
+      wasabis: false,
     };
   }
 
@@ -18,6 +19,7 @@ export class HonourService {
       points: 10,
       param: 0,
       icon: 'sashimi.svg',
+      wasabis: false,
     };
   }
 
@@ -27,6 +29,7 @@ export class HonourService {
       points: 0,
       param: 0,
       icon: 'wasabi.svg',
+      wasabis: false,
     };
   }
 
@@ -36,6 +39,7 @@ export class HonourService {
       points: 0,
       param: 0,
       icon: 'maki.svg',
+      wasabis: false,
     };
   }
 
@@ -45,6 +49,7 @@ export class HonourService {
       points: 0,
       param: 0,
       icon: 'puding.svg',
+      wasabis: false,
     };
   }
 
@@ -54,6 +59,7 @@ export class HonourService {
       points: 0,
       param: 0,
       icon: 'gozgomboc.svg',
+      wasabis: false,
     };
   }
 
@@ -75,6 +81,7 @@ export class HonourService {
       points: (wasabi ? 3 * value : value),
       param: 0,
       icon: name + 'Nigiri.svg',
+      wasabis: wasabi,
     }
   }
 }

@@ -1,0 +1,8 @@
+<div class="gamereditor">
+  <div class="gamereditor__backdrop"></div>
+  <div class="gamereditor__content">
+    Mi a neve a játékosnak?
+    <input type="text" [(ngModel)]="gamerName" (keyup.enter)="onClose()" tabindex="1" #gamerNameInput/>
+    <button type="submit"  (click)="onClose()" class="gamereditor__close" tabindex="2">Close</button>
+  </div>
+</div>

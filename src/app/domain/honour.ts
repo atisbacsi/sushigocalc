@@ -3,4 +3,5 @@ export class Honour {
   points: number;
   param: number;
   icon: String;
+  wasabis: boolean = false;
 }

@@ -18,3 +18,6 @@
 .gamerselector-layout li + li {
     margin-left: 1px;
 }
+.gamerselector__editbtn {
+    margin-left: auto;
+}
