@@ -10,10 +10,10 @@ import { HonourBookingService } from "../service/honourbooking.service";
   template: `
     <div *ngFor="let turn of turns">
       <div class="name">{{turn.name}}</div>
-      <div *ngFor="let gamer of gamers">{{getPoint(gamer, turn)}}</div>
+      <div *ngFor="let gamer of gamers">{{gamer.name}} : {{getPoint(gamer, turn)}}</div>
     </div>
     <div>Final:
-      <div *ngFor="let gamer of gamers">{{getFinalPoints(gamer)}}</div>
+      <div *ngFor="let gamer of gamers">{{gamer.name}} : {{getFinalPoints(gamer)}}</div>
     </div>
     `,
   styles: [``]

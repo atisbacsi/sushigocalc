@@ -26,6 +26,7 @@
 .display__honour {
     display: flex;
     align-items: center;
+    border-radius: 0.2em;
 }
 
 .display__sum {
@@ -63,4 +64,8 @@
 .display__delete:active {
     box-shadow: 0 0px 2px 2px hsl(0, 0%, 65%);
     transform: translateY(4px);
+  }
+
+  .display__honour--wasabi {
+    background-image: radial-gradient(hsl(100, 0%, 30%), rgb(73, 163, 24));
   }

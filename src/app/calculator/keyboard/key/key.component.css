@@ -8,7 +8,7 @@ div.key {
             ;
   }
   .key--wasabis {
-    background-image: radial-gradient(hsl(0, 0%, 30%), #9198e5);
+    background-image: radial-gradient(hsl(100, 0%, 30%), hsl(100,62%,73%));
   } 
   div.key__label {
     flex: 0;

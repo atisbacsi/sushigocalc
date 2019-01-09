@@ -1,6 +1,6 @@
 <div class="display">
   <div class="display__honourlist">
-    <div class="display__honour" *ngFor="let honour of honourList.honours">
+    <div class="display__honour" *ngFor="let honour of honourList.honours" [class.display__honour--wasabi]="honour.wasabis">
       <img src="assets/{{honour.icon}}" />
       <div *ngIf="honour.param > 0">x{{honour.param}} </div>
     </div>
