@@ -1,4 +1,4 @@
-export class Turn {
+export interface Turn {
   id: number;
   name: string;
   selected: boolean;

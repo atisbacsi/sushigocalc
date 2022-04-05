@@ -1,12 +1,12 @@
 import { Turn, TURNS } from '../domain/turn';
 import { HonourList } from '../domain/honourlist';
 import { Honour } from '../domain/honour';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 export class Gamer {
   id: Number;
   name: String;
-  selected: boolean;
+  selected: boolean = false;
   honours: Map<Turn, HonourList>;
 
   constructor(idParam: Number, nameParam: String) {
@@ -20,12 +20,12 @@ export class Gamer {
 
   }
 
-  public getHonourListByTurn(turn: Turn): HonourList {
+  public getHonourListByTurn(turn: Turn): HonourList | undefined{
     return this.honours.get(turn);
   }
 
   public getHonourlistAll(): Honour[] {
-    return TURNS.map(turn => this.honours.get(turn).honours).reduce((all, curr) => all.concat(curr), [] );
+    return TURNS.map(turn => this.honours.get(turn)!.honours).reduce((all, curr) => all.concat(curr), [] );
   }
 }
 

@@ -1,6 +1,5 @@
 import { Honour } from '../domain/honour';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable ,  Subject } from 'rxjs';
 import { multicast, refCount } from 'rxjs/operators';
 
 export class HonourList {
@@ -17,10 +16,12 @@ export class HonourList {
     this.honours.push(honour);
     this.honourChangedEvent.next(honour);
   }
-  
-  popHonour(): Honour {
-    let removedHonour: Honour =  this.honours.pop();
-    this.honourChangedEvent.next(removedHonour);
+
+  popHonour(): Honour | undefined {
+    const removedHonour =  this.honours.pop();
+    if (removedHonour) {
+      this.honourChangedEvent.next(removedHonour);
+    }
     return removedHonour;
   }
 

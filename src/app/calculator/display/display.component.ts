@@ -8,30 +8,39 @@ import { HonourBookingService } from '../../service/honourbooking.service';
 @Component({
   selector: 'display',
   templateUrl: './display.component.html',
-  styleUrls: ['./display.component.css']
+  styleUrls: ['./display.component.css'],
 })
 export class DisplayComponent implements OnInit {
-
-  honourList: HonourList;
+  honourList: HonourList | undefined;
 
   constructor(
     private gamerService: GamersService,
     private turnsService: TurnsService,
-    private honourBookingService: HonourBookingService,
-  ) { }
+    private honourBookingService: HonourBookingService
+  ) {
+    this.honourList = this.gamerService
+      .getSelectedGamer()
+      .getHonourListByTurn(this.turnsService.getSelectedTurn());
+  }
 
   ngOnInit() {
     this.setSelectedHonourList();
-    this.gamerService.gamerChange$().subscribe(g => this.setSelectedHonourList());
-    this.turnsService.turnChange$().subscribe(t => this.setSelectedHonourList());
+    this.gamerService
+      .gamerChange$()
+      .subscribe((g) => this.setSelectedHonourList());
+    this.turnsService
+      .turnChange$()
+      .subscribe((t) => this.setSelectedHonourList());
   }
 
   onDelete(): void {
-    this.honourList.popHonour();
+    this.honourList?.popHonour();
   }
 
   private setSelectedHonourList(): void {
-    this.honourList = this.gamerService.getSelectedGamer().getHonourListByTurn(this.turnsService.getSelectedTurn());
+    this.honourList = this.gamerService
+      .getSelectedGamer()
+      .getHonourListByTurn(this.turnsService.getSelectedTurn());
   }
 
   get sum(): number {

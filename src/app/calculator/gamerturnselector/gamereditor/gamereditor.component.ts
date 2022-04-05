@@ -7,23 +7,23 @@ import { Gamer } from '../../../domain/gamer';
   styleUrls: ['./gamereditor.component.css']
 })
 export class GamereditorComponent implements OnInit {
-  gamerName: String;
+  gamerName?: String;
 
   @Output('onClose') onCloseEvent = new EventEmitter<void>();
 
   @ViewChild("gamerNameInput")
-  inputField: ElementRef;
+  inputField?: ElementRef;
 
-  @Input('gamer') gamer: Gamer;
-  
+  @Input('gamer') gamer?: Gamer;
+
   constructor() { }
 
   ngOnInit() {
-    this.inputField.nativeElement.focus();
+    this.inputField!.nativeElement.focus();
   }
 
   onClose():void {
-    this.gamer.name = this.gamerName;
+    this.gamer!.name = this.gamerName!;
     this.onCloseEvent.emit();
   }
 

@@ -16,10 +16,11 @@ export class HonourBookingService {
   }
 
   public addHonour(honour: Honour, gamer: Gamer, turn: Turn) {
-    let honours: HonourList;
-    honours = gamer.getHonourListByTurn(turn);
-    honours.pushHonour(honour);
-    this.getSumByTurn(gamer, turn);
+    const honours = gamer.getHonourListByTurn(turn);
+    if (honours) {
+      honours.pushHonour(honour);
+      this.getSumByTurn(gamer, turn);
+    }
   }
 
   public addHonourToSelected(honour: Honour) {
@@ -32,15 +33,16 @@ export class HonourBookingService {
   }
 
   public getSumByTurn(gamer: Gamer, turn: Turn): number {
-    let honours: HonourList;
-    honours = gamer.getHonourListByTurn(turn);
-    let points = this.getSimpleHonourPoints(honours)
+    const honours: HonourList | undefined = gamer.getHonourListByTurn(turn);
+    if (honours) {
+      let points = this.getSimpleHonourPoints(honours)
       + this.getGozgombocPoint(honours)
       + this.getMakiPoints(honours, turn)
       //      + this.getPudingPoints(gamer.getHonourlistAll())
       ;
-
-    return points;
+      return points;
+    }
+    return 0;
   }
   public getSum(gamer: Gamer): number {
     let points =
@@ -81,7 +83,8 @@ export class HonourBookingService {
     let orderedMakiCounts = this.gamersService
       .getAllGamers()
       .map(g => g.getHonourListByTurn(turn))
-      .map(honours => this.getMakiCount(honours))
+      .filter(honours => !!honours)
+      .map(honours => this.getMakiCount(honours!))
       .sort((a, b) => a - b);
     let highest = orderedMakiCounts[orderedMakiCounts.length - 1];
 
@@ -96,7 +99,7 @@ export class HonourBookingService {
       let db = orderedMakiCounts.filter(maki => maki == highest).length;
       makipoint = 6 / db;
     }
-    if (secondHighest > 0 && sajatMakiCount == secondHighest) {
+    if (!!secondHighest && secondHighest > 0 && sajatMakiCount == secondHighest) {
       let db = orderedMakiCounts.filter(maki => maki == secondHighest).length;
       makipoint = 3 / db;
     }
@@ -129,4 +132,4 @@ export class HonourBookingService {
   private getPudingCount(honours: Honour[]): number {
     return honours.filter(honour => honour.name == 'Puding').reduce(sum => sum + 1, 0);
   }
-} 
+}

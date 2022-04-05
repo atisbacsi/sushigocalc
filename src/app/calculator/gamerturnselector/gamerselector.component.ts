@@ -10,8 +10,8 @@ import { Gamer, GAMERS } from '../../domain/gamer';
     <li *ngFor="let gamer of gamers" [class.selected]="gamer.selected"  (click)="select(gamer)">
       <a>{{gamer.name}}</a>
     </li>
-    <li (click)="add()"><a>+</a></li>    
-    <li (click)="changeName()"><a class="gamerselector__editbtn">$</a></li>    
+    <li (click)="add()"><a>+</a></li>
+    <li (click)="changeName()"><a class="gamerselector__editbtn">$</a></li>
   </ul>
   <gamereditor *ngIf="openGamerEditor" [gamer]="selectedGamer" (onClose)="closeGamerEditor()"></gamereditor>`,
   styleUrls: ['./gamerselector.component.css']
@@ -28,7 +28,7 @@ export class GamerSelectorComponent  {
     return this.gamersService.getAllGamers();
   }
 
-  private select(selectedGamer: Gamer): void {
+  select(selectedGamer: Gamer): void {
     this.gamersService.setSelectedGamer(selectedGamer);
   }
 
@@ -39,8 +39,8 @@ export class GamerSelectorComponent  {
   get selectedGamer(): Gamer {
     return this.gamersService.getSelectedGamer();
   }
-  
-  private closeGamerEditor(){
+
+  closeGamerEditor(){
     this.openGamerEditor = false;
   }
   add(): void {

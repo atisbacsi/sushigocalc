@@ -7,7 +7,7 @@ import { Honour } from '../../../domain/honour';
   styleUrls: ["./key.component.css"]
 })
 export class KeyComponent  {
-  @Input() honour: Honour;
+  @Input() honour!: Honour;
   @Output() keyPressed = new EventEmitter<Honour>();
   clicked(): void {
     this.keyPressed.emit(this.honour);

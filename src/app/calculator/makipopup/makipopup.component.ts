@@ -7,10 +7,10 @@ import { Component, OnInit, Output, EventEmitter, ElementRef, ViewChild } from '
 })
 export class MakipopupComponent implements OnInit {
 
-  countOfMaki: number;
+  countOfMaki: number = 0;
 
   @ViewChild("countInput")
-  inputField: ElementRef;
+  inputField!: ElementRef;
 
   @Output('onClose') onCloseEvent = new EventEmitter<number>();
   constructor() { }

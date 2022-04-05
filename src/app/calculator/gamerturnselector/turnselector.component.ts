@@ -26,7 +26,7 @@ export class TurnSelectorComponent  {
     return this.turnsService.getAllTurns();
   }
 
-  private select(selectedTurn: Turn): void {
+  select(selectedTurn: Turn): void {
     this.turnsService.setSelectedTurn(selectedTurn);
     this.onTurnSelected.emit();
   }
